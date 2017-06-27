@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+	<display-name></display-name>
+	<listener>
+		<listener-class>cn.tedu.listener.MyServletContextListener</listener-class>
+	</listener>
+	<filter>
+		<filter-name>EncodingFilter</filter-name>
+		<filter-class>cn.tedu.filter.EncodingFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>EncodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<filter>
+		<filter-name>AutoLoginFilter</filter-name>
+		<filter-class>cn.tedu.filter.AutoLoginFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>AutoLoginFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+	<servlet>
+		<servlet-name>RegistServlet</servlet-name>
+		<servlet-class>cn.tedu.web.RegistServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>VerifyCodeServlet</servlet-name>
+		<servlet-class>cn.tedu.web.VerifyCodeServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>AjaxCheckNameServlet</servlet-name>
+		<servlet-class>cn.tedu.web.AjaxCheckNameServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>LoginServlet</servlet-name>
+		<servlet-class>cn.tedu.web.LoginServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>LogoutServlet</servlet-name>
+		<servlet-class>cn.tedu.web.LogoutServlet</servlet-class>
+	</servlet>
+  <servlet>
+    <servlet-name>AjaxCheckCodeServlet</servlet-name>
+    <servlet-class>cn.tedu.web.AjaxCheckCodeServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>BackProdListServlet</servlet-name>
+    <servlet-class>cn.tedu.web.back.BackProdListServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ImgurlServlet</servlet-name>
+    <servlet-class>cn.tedu.web.back.ImgurlServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>AjaxCheckBackPnumServlet</servlet-name>
+    <servlet-class>cn.tedu.web.back.AjaxCheckBackPnumServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>delProdServlet</servlet-name>
+    <servlet-class>cn.tedu.web.back.delProdServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>QueryProductServlet</servlet-name>
+    <servlet-class>cn.tedu.web.QueryProductServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ProductShowServlet</servlet-name>
+    <servlet-class>cn.tedu.web.ProductShowServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>CartAddServlet</servlet-name>
+    <servlet-class>cn.tedu.web.CartAddServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>CartDeleteServlet</servlet-name>
+    <servlet-class>cn.tedu.web.CartDeleteServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>CartEditServlet</servlet-name>
+    <servlet-class>cn.tedu.web.CartEditServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>OrderAddServlet</servlet-name>
+    <servlet-class>cn.tedu.web.OrderAddServlet</servlet-class>
+  </servlet>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<servlet-mapping>
+		<servlet-name>RegistServlet</servlet-name>
+		<url-pattern>/RegistServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>VerifyCodeServlet</servlet-name>
+		<url-pattern>/VerifyCodeServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AjaxCheckNameServlet</servlet-name>
+		<url-pattern>/AjaxCheckNameServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>LoginServlet</servlet-name>
+		<url-pattern>/LoginServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>LogoutServlet</servlet-name>
+		<url-pattern>/LogoutServlet</url-pattern>
+	</servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AjaxCheckCodeServlet</servlet-name>
+    <url-pattern>/AjaxCheckCodeServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>BackProdListServlet</servlet-name>
+    <url-pattern>/BackProdListServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ImgurlServlet</servlet-name>
+    <url-pattern>/ImgurlServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AjaxCheckBackPnumServlet</servlet-name>
+    <url-pattern>/AjaxCheckBackPnumServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>delProdServlet</servlet-name>
+    <url-pattern>/delProdServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>QueryProductServlet</servlet-name>
+    <url-pattern>/QueryProductServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ProductShowServlet</servlet-name>
+    <url-pattern>/ProductShowServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CartAddServlet</servlet-name>
+    <url-pattern>/CartAddServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CartDeleteServlet</servlet-name>
+    <url-pattern>/CartDeleteServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CartEditServlet</servlet-name>
+    <url-pattern>/CartEditServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>OrderAddServlet</servlet-name>
+    <url-pattern>/OrderAddServlet</url-pattern>
+  </servlet-mapping>
+
+
+
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+</web-app>

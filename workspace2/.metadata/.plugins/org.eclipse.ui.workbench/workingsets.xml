@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workingSetManager>
+<workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1498041892146_3" label="easymall" name="easymall">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/easymall1.0" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/easymall_back" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/easymall1.4" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/easymall1.2" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/easymall" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/easymall1.1" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/Spring" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/easymall1.5" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/easymall1.3" type="4"/>
+</workingSet>
+<workingSet editPageId="org.eclipse.ui.resourceWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1498042069668_4" label="frame" name="frame">
+<item elementID="=spring_day04" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/Spring" type="4"/>
+<item elementID="=spring_day05" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/spring_aop" type="4"/>
+</workingSet>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1495418972380_0" label="Window Working Set" name="Aggregate for window 1495418972380"/>
+</workingSetManager>

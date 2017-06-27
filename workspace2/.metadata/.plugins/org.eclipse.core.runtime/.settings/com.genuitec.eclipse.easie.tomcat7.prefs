@@ -1,0 +1,9 @@
+ENDORSED_DIRS="D\:\\software\\tomcat7.0/common/endorsed"
+JDK_HOME=D\:\\software\\jdk
+JDK_INSTALLATION_NAME=jdk
+LIBRARY_PATH="D\:\\software\\jdk\\bin;D\:\\software\\tomcat7.0\\bin"
+SERVER_ENABLEMENT=true
+TOMCAT_BASE=D\:\\software\\tomcat7.0
+TOMCAT_HOME=D\:\\software\\tomcat7.0
+TOMCAT_TEMP=D\:\\software\\tomcat7.0\\temp
+eclipse.preferences.version=1

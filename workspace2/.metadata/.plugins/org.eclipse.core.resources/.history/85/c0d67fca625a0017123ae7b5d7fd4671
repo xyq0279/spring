@@ -1,0 +1,22 @@
+package threadLocal;
+
+import java.util.List;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class PriThreadLocal {
+	
+	
+	private ThreadLocal<List<String>> threadLocal = new ThreadLocal<List<String>>();
+
+	public ThreadLocal<List<String>> getThreadLocal() {
+		return threadLocal;
+	}
+
+	public void setThreadLocal(List<String> list) {
+		threadLocal.set(list);
+	}
+	
+	
+}

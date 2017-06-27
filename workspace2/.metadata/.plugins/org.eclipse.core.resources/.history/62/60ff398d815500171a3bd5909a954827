@@ -1,0 +1,55 @@
+package test;
+
+import java.util.Calendar;
+
+
+import org.junit.Test;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import pojo.Hello;
+
+
+public class TestSpring {
+	//静态工厂
+	@Test
+	public void test04(){
+		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+		Calendar calendar = (Calendar) context.getBean("CalendarA");
+		System.out.println(calendar.getTime());
+	}
+	//实例工厂
+	@Test
+	public void test05(){
+		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+		Calendar calendar = (Calendar) context.getBean("CalendarB");
+		System.out.println(calendar.getTime());
+	}
+	//Spring工厂
+		@Test
+		public void test06(){
+			ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+			Calendar calendar = (Calendar) context.getBean("CalendarB");
+			System.out.println(calendar.getTime());
+		}
+	/*@Test
+	public void test01(){
+		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+		Hello hello = (Hello) context.getBean("hello");
+		hello.Hello();
+	}
+	
+	@Test
+	public void test02(){
+		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+		Hello hello = context.getBean(Hello.class);
+		hello.Hello();
+	}
+	@Test
+	public void test03(){
+		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+		Hello hello = (Hello) context.getBean("hahaha");
+		hello.Hello();
+	}
+	*/
+}

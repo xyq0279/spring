@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	   http://www.springframework.org/schema/beans/spring-beans-3.2.xsd ">
+	
+	
+	<!-- 
+	<bean id="hello" class="pojo.Hello"></bean>
+	<bean id="hellob" class="pojo.Hello"></bean>
+	<alias name="hello" alias="hahaha"/>
+	 -->
+	<!-- 1.通过静态工厂获取对象 ()
+		id 对象的名称
+	 	class 静态工程的类型
+	 -->
+	<bean id="CalendarA" class="factory.StaticFactory" factory-method="getCalendar"></bean>
+	<!-- 创建实例工厂 -->
+	<!-- factory-bean：实例工厂的id    factory-method：实例工厂的方法 -->
+	<bean id="newFactory" class="factory.NewInstanceFactory"></bean>
+	<bean id="CalendarB" factory-bean="newFactory" factory-method="getCalendar"></bean>
+	
+	<!-- 创建Spring工厂
+		class:是Spring工厂的类路径
+		id：
+	 -->
+	<bean id="CalendarC" class="factory.SpringFactory"></bean>
+	<!-- 单例模式？
+		在Spring容器中，默认创建的对象都是单例的
+		在Spring容器中，默认使用单例对象便于维护
+		
+	 -->
+	<bean id="user" class="pojo.User"></bean>
+	
+	
+</beans>

@@ -1,0 +1,13 @@
+package pojo;
+
+public class Hello {
+	public Hello(){
+		System.out.println("我是一个无参构造方法");
+	}
+	public Hello(int a){
+		System.out.println("我是一个构造方法");
+	}
+	public void Hello(){
+		System.out.println("hello spring");
+	}
+}

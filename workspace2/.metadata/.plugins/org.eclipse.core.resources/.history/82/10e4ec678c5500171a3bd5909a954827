@@ -1,0 +1,10 @@
+package pojo;
+
+public class User {
+	public User(){
+		System.out.println("我是一个构造函数，懒加载");
+	}
+	public void say(){
+		System.out.println("大家你们喝农药吗？");
+	}
+}

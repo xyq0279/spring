@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="easymall">
+        <property name="context-root" value="/easymall"/>
+        <property name="java-output-path" value="/easymall/WebRoot/WEB-INF/classes"/>
+    </wb-module>
+</project-modules>

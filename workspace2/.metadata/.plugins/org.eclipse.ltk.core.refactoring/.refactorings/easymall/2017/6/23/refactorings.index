@@ -1,0 +1,61 @@
+1496626380947	Rename type 'UserDao'
+1496626408075	Copy compilation unit
+1496627032060	Rename type 'ImpUserDao'
+1496627143715	Delete element
+1496648058797	Copy compilation unit
+1496651786727	Delete element
+1496651807191	Rename type 'MysqlUserDao'
+1496652726604	Extract local variable 'prop'
+1496659628969	Copy compilation unit
+1496731384372	Extract local variable 'map'
+1496731424042	Extract local variable 'method'
+1496731774684	Extract local variable 'vs'
+1496731974099	Extract local variable 'myReq'
+1496735158162	Extract local variable 'names'
+1496735246192	Extract local variable 'username'
+1496735258553	Extract local variable 'password'
+1496735658245	Extract local variable 'Sstring'
+1496747571622	Copy files
+1496747592229	Copy folders
+1496748190227	Copy file
+1496748258759	Copy file
+1496748272378	Copy file
+1496803927001	Delete element
+1496804091503	Extract local variable 'context'
+1496804131751	Extract local variable 'contextPath'
+1496807186119	Copy file
+1496807229487	Rename resource '_foot.jsp'
+1496807257629	Copy file
+1496807269782	Copy file
+1496807280124	Copy file
+1496807300826	Copy file
+1496807371041	Delete element
+1496807405127	Delete element
+1496807422521	Delete element
+1496807438886	Delete element
+1496807502284	Delete element
+1496833366670	Copy compilation unit
+1496833373004	Delete element
+1496838833226	Delete element
+1496839237946	Extract local variable 'imgurl'
+1496888513114	Extract local variable 'pnum'
+1496888544253	Extract local variable 'pid'
+1496890269447	Extract local variable 'b'
+1496910390919	Copy compilation unit
+1496974349814	Copy file
+1496974392492	Delete element
+1496974439339	Rename resource 'prod_list.jsp'
+1496974453074	Copy file
+1496974525591	Delete element
+1496997691286	Extract local variable 'pid'
+1497009567156	Copy compilation unit
+1497009572772	Delete element
+1497012060995	Delete element
+1497012157335	Extract local variable 'category'
+1497012181288	Extract local variable 'minprice'
+1497012212171	Extract local variable 'maxprice'
+1497061666294	Extract local variable 'pid'
+1497065281153	Copy file
+1497065327699	Delete element
+1497065692793	Delete element
+1497065697809	Delete element

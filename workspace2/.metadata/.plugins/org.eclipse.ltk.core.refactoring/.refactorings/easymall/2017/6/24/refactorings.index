@@ -1,0 +1,30 @@
+1497145952085	Delete element
+1497147428460	Extract local variable 'pid'
+1497147797194	Extract local variable 'obj'
+1497261612592	Move compilation unit
+1497261616357	Move compilation unit
+1497261693102	Move compilation unit
+1497261697053	Move compilation unit
+1497261978087	Copy file
+1497262319786	Delete element
+1497351771628	Delete element
+1497356585066	Move compilation unit
+1497356644120	Delete element
+1497411669006	Rename type 'service'
+1497411727475	Rename type 'dao'
+1497495415515	Rename type 'tran'
+1497495530085	Rename package 'cn.tedu.tran'
+1497514499099	Copy file
+1497514540394	Delete element
+1497514935930	Delete element
+1497514944822	Delete element
+1497514964951	Rename type 'OrderAddService'
+1497514978429	Rename type 'OrderAddServiceImpl'
+1497614596234	Copy file
+1497614621872	Copy file
+1497614628670	Copy file
+1497614635705	Copy file
+1497614663208	Delete element
+1497614712141	Delete element
+1497614726627	Delete element
+1497614742708	Delete element

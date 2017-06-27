@@ -1,0 +1,17 @@
+package threadLocal;
+
+import java.util.List;
+
+public class PriThreadLocal {
+	private ThreadLocal<List<String>> threadLocal = new ThreadLocal<List<String>>();
+
+	public ThreadLocal<List<String>> getThreadLocal() {
+		return threadLocal;
+	}
+
+	public void setThreadLocal(ThreadLocal<List<String>> threadLocal) {
+		this.threadLocal = threadLocal;
+	}
+	
+	
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Extract local variable &apos;Listener&apos; from expression &apos;new ActionListener(){@Override public void actionPerformed(ActionEvent e){}}&apos;&#x0D;&#x0A;- Original project: &apos;class&apos;&#x0D;&#x0A;- Variable name: &apos;Listener&apos;&#x0D;&#x0A;- Destination method: &apos;day17.Demo1.main()&apos;&#x0D;&#x0A;- Variable expression: &apos;new ActionListener(){@Override public void actionPerformed(ActionEvent e){}}&apos;&#x0D;&#x0A;- Replace occurrences of expression with variable" description="Extract local variable &apos;Listener&apos;" final="false" id="org.eclipse.jdt.ui.extract.temp" input="/src&lt;day17{Demo1.java" name="Listener" replace="true" selection="548 0" stamp="1496798465816" version="1.0"/>
+</session>

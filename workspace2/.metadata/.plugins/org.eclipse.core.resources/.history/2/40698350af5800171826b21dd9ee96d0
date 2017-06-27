@@ -1,0 +1,9 @@
+package service;
+
+import anno.Tran;
+
+public interface PersonService {
+	
+	@Tran
+	public void save();
+}

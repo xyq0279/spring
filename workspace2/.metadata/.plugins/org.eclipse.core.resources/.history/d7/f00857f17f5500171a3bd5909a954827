@@ -1,0 +1,14 @@
+package factory;
+
+import java.util.Calendar;
+
+public class NewInstanceFactory {
+	
+	public NewInstanceFactory(){
+		System.out.println("我是一个实例工厂");
+	}
+	
+	public Calendar getCaledar(){
+		return Calendar.getInstance();
+	}
+}

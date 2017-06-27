@@ -1,0 +1,12 @@
+package aspect;
+
+import org.aspectj.lang.ProceedingJoinPoint;
+
+public class PriAspect {
+	
+	
+	public Object around(ProceedingJoinPoint joinPoint){
+		Object result = null;
+		return result;
+	}
+}

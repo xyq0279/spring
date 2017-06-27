@@ -1,0 +1,13 @@
+package dao;
+
+import pojo.User;
+
+public class UserDaoImpl implements UserDao {
+
+	@Override
+	public void userAdd(User u) {
+		System.out.println(u+"萌萌哒");
+
+	}
+
+}

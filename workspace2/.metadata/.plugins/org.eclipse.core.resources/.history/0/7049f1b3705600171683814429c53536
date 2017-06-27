@@ -1,0 +1,11 @@
+package dao;
+
+public class UserDaoImpl implements UserDao {
+
+	@Override
+	public void userAdd() {
+		// TODO Auto-generated method stub
+
+	}
+
+}

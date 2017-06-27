@@ -1,0 +1,10 @@
+/CallBackServlet
+/CartAddServlet
+/CartDeleteServlet
+/CartEditServlet
+/OrderAddServlet
+/OrderDeleteServlet
+/OrderListServlet
+/PayServlet
+/addOrder.jsp
+/

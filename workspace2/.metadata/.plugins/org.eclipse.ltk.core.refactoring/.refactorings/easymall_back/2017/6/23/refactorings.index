@@ -1,0 +1,18 @@
+1496747880180	Copy file
+1496747892894	Copy file
+1496747903455	Copy file
+1496747914937	Copy file
+1496747933407	Delete element
+1496747947541	Delete element
+1496747971908	Delete element
+1496748000596	Delete element
+1496748014745	Delete element
+1496751599948	Delete element
+1496751610883	Rename package 'cn.tedu.servlet'
+1496903513635	Extract local variable 'username'
+1496903625282	Extract local variable 'password'
+1496903714353	Extract local variable 'password2'
+1496903744329	Extract local variable 'nickname'
+1496903752733	Extract local variable 'email'
+1496904129832	Extract local variable 'valistr'
+1496912448529	Rename resource 'regist.jsp'

@@ -1,0 +1,13 @@
+CustomDeploymentServer.easymall.IEARProjectName=
+CustomDeploymentServer.easymall.altContextRoot=
+CustomDeploymentServer.easymall.contextRoot=/easymall
+CustomDeploymentServer.easymall.deployIsOverProject=false
+CustomDeploymentServer.easymall.deploymentPath=D\:\\www.easymall.com\\ROOT
+CustomDeploymentServer.easymall.isDeployed=true
+CustomDeploymentServer.easymall.isExploded=true
+CustomDeploymentServer.easymall.isUptoDate=true
+CustomDeploymentServer.easymall.noFileCopy=false
+CustomDeploymentServer.easymall.shouldBackup=false
+CustomDeploymentServer.easymall.shouldOverwrite=false
+CustomDeploymentServer.easymall.type=WebDeployment
+eclipse.preferences.version=1

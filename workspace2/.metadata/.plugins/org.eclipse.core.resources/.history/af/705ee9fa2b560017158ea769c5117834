@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:context="http://www.springframework.org/schema/context"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	   http://www.springframework.org/schema/beans/spring-beans-3.2.xsd 
+	   http://www.springframework.org/schema/context 
+	   http://www.springframework.org/schema/context/spring-context-3.2.xsd
+	   ">
+	<!-- 
+	<bean id="hello" class="pojo.Hello"></bean>
+	<bean id="hellob" class="pojo.Hello"></bean>
+	<alias name="hello" alias="hahaha"/>
+	 -->
+	<!-- 1.通过静态工厂获取对象 ()
+		id 对象的名称
+	 	class 静态工程的类型
+	 -->
+	<!--  <bean id="CalendarA" class="factory.StaticFactory" factory-method="getCalendar"></bean>  -->
+	<!-- 创建实例工厂 -->
+	<!-- factory-bean：实例工厂的id    factory-method：实例工厂的方法 -->
+	<!-- <bean id="newFactory" class="factory.NewInstanceFactory"></bean>
+	<bean id="CalendarB" factory-bean="newFactory" factory-method="getCalendar"></bean> -->
+	
+	<!-- 创建Spring工厂
+		class:是Spring工厂的类路径
+		id：
+	 -->
+<!-- 	<bean id="CalendarC" class="factory.SpringFactory"></bean> -->
+	<!-- 单例模式？
+		在Spring容器中，默认创建的对象都是单例的
+		在Spring容器中，默认使用单例对象便于维护
+		scope="singleton"  表示当前bean是单例的
+		scope="prototype"  表示当前bean是多例的
+	 -->
+	<!-- <bean id="user" class="pojo.User" scope="prototype"></bean> -->
+	<!-- 对象的懒加载 
+		lazy-init="default" 该属性和全局的配置报纸一致
+		lazy-init="false" 懒加载不生效
+		lazy-init="true" 懒加载生效
+	-->
+	<!-- <bean id="user" class="pojo.User" lazy-init="default"></bean> -->
+	
+	<!-- 初始化和销毁操作 -->
+	<!-- <bean id="user" class="pojo.User" init-method="init" destroy-method="destroy"></bean> -->
+	<!--  -->
+	<bean id="user" class="pojo.User2">
+	<!-- 为属性赋值 -->
+		<property name="id" value="110"></property>
+		<property name="name" value="虞姬"></property>
+		<property name="list">
+			<list>
+				<value>上单</value>
+				<value>中单</value>
+				<value>打野</value>
+			</list>
+		</property>
+		<property name="set">
+			<set>
+				<value>呵呵</value>
+				<value>呵呵</value>
+				<value>呵呵</value>
+			</set>
+		</property>
+		<!-- spring内部维护的是一个linkedhashMap -->
+		<property name="map">
+			<map>
+				<entry key="1" value="李白"></entry>
+				<entry key="2" value="曹操"></entry>
+				<entry key="3" value="武则天"></entry>
+			</map>
+		</property>
+		<property name="pro">
+			<props>
+				<prop key="1">a</prop>
+				<prop key="2">b</prop>
+				<prop key="3">c</prop>
+			</props>
+		</property>
+		<!-- 通过ref进行引用 -->
+		<property name="dog" ref="dog"></property>
+		<property name="cat" ref="cat"></property>
+	</bean>
+	<bean id="dog" class="pojo.Dog"></bean>
+	<bean id="cat" class="pojo.Cat"></bean>
+</beans>

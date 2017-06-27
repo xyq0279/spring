@@ -1,0 +1,19 @@
+package aspect;
+
+import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.annotation.Around;
+import org.aspectj.lang.annotation.Aspect;
+import org.springframework.stereotype.Component;
+
+import anno.PersonInfo;
+
+@Component
+@Aspect
+public class PriAspect {
+	
+	@Around("execution(* service..*.*(..)) && @annotation(pri)")
+	public Object around(ProceedingJoinPoint joinPoint,PersonInfo pri){
+		Object result = null;
+		return result;
+	}
+}

@@ -1,0 +1,10 @@
+<classpath>
+  <container id="easymall!org.eclipse.jst.j2ee.internal.web.container">
+    <entry id="D:/workspace/workspace2/easymall/WebRoot/WEB-INF/lib/commons-beanutils-1.8.3.jar">
+      <source-attachment-path>D:/每日代码/老师发的代码/javaweb/day14_JSTL+软件分层/resource/beanutils/commons-beanutils-1.8.3/commons-beanutils-1.8.3-sources.jar</source-attachment-path>
+    </entry>
+    <entry id="D:/workspace/workspace2/easymall/WebRoot/WEB-INF/lib/commons-dbutils-1.4.jar">
+      <source-attachment-path>D:/每日代码/老师发的代码/javaweb/day14_JSTL+软件分层/resource/commons-dbutils-1.4-bin/commons-dbutils-1.4/commons-dbutils-1.4-sources.jar</source-attachment-path>
+    </entry>
+  </container>
+</classpath>

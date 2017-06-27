@@ -1,0 +1,10 @@
+package factory;
+
+import java.util.Calendar;
+
+public class StaticFactory {
+	//通过静态方法获取一个对象
+	public static Calendar getCalendar(){
+		return Calendar.getInstance();
+	}
+}

@@ -1,0 +1,12 @@
+package test;
+
+import org.junit.Test;
+
+public class test02 {
+	
+	
+	@Test
+	public void test(){
+		
+	}
+}

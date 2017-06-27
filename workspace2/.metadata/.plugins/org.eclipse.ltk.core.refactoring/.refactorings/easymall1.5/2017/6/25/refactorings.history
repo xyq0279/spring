@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;RoleFilter.java&apos; to &apos;easymall/src/cn.tedu.filter&apos;&#x0D;&#x0A;- Original project: &apos;easymall1.5&apos;&#x0D;&#x0A;- Destination element: &apos;easymall/src/cn.tedu.filter&apos;&#x0D;&#x0A;- Original element: &apos;cn.tedu.filter.RoleFilter.java&apos;" description="Copy compilation unit" destination="=easymall/src&lt;cn.tedu.filter" element1="/src&lt;cn.tedu.filter{RoleFilter.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1498111892117" units="1" version="1.0"/>
+</session>
