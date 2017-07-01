@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- <mapper namespace="pojo.UserMapper"> -->
+	<mapper namespace="mapper.UserMapper">
+	
+	<!-- 适用于二级缓存 -->
+<!-- <cache/> -->
+
+	
+	
+	
+	<!-- 写sql语句 -->
+	<sql id="selectUser">
+		select * from user
+	</sql>
+	<select id="findAll" resultType="pojo.User">
+		select * from user
+	</select>
+	<insert id="addUser">
+		insert into user 
+		(id,name,age,sex) values 
+		(null,#{name},#{age},#{sex})
+	</insert>
+	<select id="findUserOrderByAge" resultType="pojo.User">
+		select * from user order by ${age}
+	</select>
+	<select id="findUserByAge" resultType="pojo.User">
+		select * from user where 
+		age>${minAge} and 
+		<![CDATA[age<${maxAge}]]>
+	</select>
+	
+	<update id="dymanicUpdate">
+		update user 
+		<set>
+			<if test="name !=null"> name = #{name},</if>
+			<if test="age !=null"> age = #{age},</if>
+			<if test="sex !=null"> sex = #{sex} </if>
+		</set>
+		where id = #{id}
+	</update>
+	<select id="dymanicFind" resultType="pojo.User">
+		select * from user
+		<where>
+			<if test="id !=null"> id = #{id}</if>
+			<if test="name !=null"> and name = #{name}</if>
+			<if test="age !=null"> and age = #{age}</if>
+			<if test="sex !=null"> and sex = #{sex}</if>
+			
+		</where>
+	</select>
+	<insert id="dymanicAdd">
+		insert into user 
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			id,
+			<if test="name != null">name,</if>
+			<if test="age != null">age,</if>
+			<if test="sex != null">sex</if>
+		</trim>
+		values 
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			null,
+			<if test="name != null">#{name},</if>
+			<if test="age != null">#{age},</if>
+			<if test="sex != null">#{sex}</if>
+		</trim>
+	</insert>
+	<delete id="delete">
+		delete from user where id in
+		<foreach collection="array" open="(" close=")" item="id" separator=",">#{id}</foreach>
+	</delete>
+	<select id="findOne" resultType="User">
+		<include refid="selectUser"/> where id = #{hehe}
+	</select>
+	
+	<!-- 手动封装 -->
+	<resultMap type="pojo.User" id="userRM">
+	<!-- 主键必须得写 -->
+		<id column="id" property="id"/>
+		<result column="user_name" property="name"/>
+		<result column="user_age" property="age"/>
+		<result column="user_sex" property="sex"/>
+	</resultMap>
+	<select id="findMap">
+		select 
+		id user_id,name user_name,age user_age,sex user_sex 
+		from user
+	</select>
+	
+</mapper>

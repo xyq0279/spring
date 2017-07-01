@@ -1,0 +1,8 @@
+package dao;
+
+import damain.User;
+
+public interface UserDao {
+	public void addUser();
+	public User findUser();
+}

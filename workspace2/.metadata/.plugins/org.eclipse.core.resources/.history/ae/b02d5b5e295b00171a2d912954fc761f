@@ -1,0 +1,37 @@
+package controller;
+
+//import javax.servlet.http.HttpServletRequest;
+//import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+//import org.springframework.web.servlet.ModelAndView;
+
+
+
+@Controller
+public class HelloController{
+	
+	@RequestMapping(value="/hello.action")
+	public String hello(Model model){
+		model.addAttribute("hello", "Hello SpringMVC注解形式");
+		return "hello";//返回的是
+	
+	
+//public class HelloController implements Controller{
+	
+	/*public ModelAndView handleRequest(HttpServletRequest request,
+			HttpServletResponse response) throws Exception {
+		// TODO Auto-generated method stub
+		ModelAndView modelAndView = new ModelAndView();
+		//添加数据
+		modelAndView.addObject("hello","Hello SpringMVC");
+		//添加页面名称
+		modelAndView.setViewName("hello");//展现hello页面
+		
+		
+		return modelAndView;*/
+	}
+
+}

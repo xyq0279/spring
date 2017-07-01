@@ -1,0 +1,19 @@
+package dao;
+
+import damain.User;
+
+public class UserDaoImpl implements UserDao{
+
+	@Override
+	public void addUser() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public User findUser() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

@@ -1,0 +1,29 @@
+package controller;
+
+
+
+import java.io.File;
+import java.io.IOException;
+
+import org.apache.commons.io.FileUtils;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.multipart.MultipartFile;
+
+
+@Controller
+public class FileController {
+	
+	@RequestMapping("toFile.action")
+	public String tofile(){
+		return "fileUpLoad";
+	}
+
+	@RequestMapping("file.action")
+	public String file(MultipartFile photo,Model model) throws IOException{
+		FileUtils.writeByteArrayToFile(new File("D:/dayCode/"+photo.getOriginalFilename()), photo.getBytes());
+		model.addAttribute("msg", "文件上传成功");
+		return "fileUpLoad";
+	}
+}

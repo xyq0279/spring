@@ -1,0 +1,24 @@
+package cn.tedu.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import cn.tedu.service.UserService;
+
+
+@Controller
+public class UserController {
+	
+	
+	@Autowired
+	private UserService userService;
+	
+	@RequestMapping("toFindAll.action")
+	public String findAll(){
+		userService.findAll();
+		
+		return "findAll";
+	}
+
+}

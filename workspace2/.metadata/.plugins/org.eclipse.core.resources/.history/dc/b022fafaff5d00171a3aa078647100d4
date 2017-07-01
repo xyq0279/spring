@@ -1,0 +1,66 @@
+package test;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.HashMap;
+import java.util.List;
+
+import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+import org.junit.Before;
+import org.junit.Test;
+
+import pojo.User;
+
+public class MybatisTest {
+	
+	private SqlSessionFactory factory;
+
+	@Before
+	public void init() throws IOException{
+		InputStream inputStream = Resources.getResourceAsStream("sqlMapConfig.xml");
+		factory= new SqlSessionFactoryBuilder().build(inputStream);
+	}
+	//查询用户
+	@Test
+	public void test01(){
+		SqlSession session = factory.openSession();
+		List<User> userList = session.selectList("pojo.UserMapper.findUser");
+		for (User user : userList) {
+			System.out.println(user);
+		}
+	}
+	//插入用户
+	@Test
+	public void test02(){
+		SqlSession session = factory.openSession();
+		User user = new User();
+		user.setName("鬼谷子");
+		user.setAge(15);
+		user.setSex("男");
+		
+		session.insert("pojo.UserMapper.addUser", user);
+		
+		session.commit();
+	}
+	//用户排序
+	@Test
+	public void test03(){
+		SqlSession session = factory.openSession();
+		HashMap<String,String> map = new HashMap<String,String>();
+		map.put("age", "age");
+		List<Object> List = session.selectList("pojo.UserMapper.findUserByAge", map);
+		for (User user : userList) {
+			System.out.println(user);
+		}
+	}
+	
+	//修改用户
+	
+	//删除用户
+	
+	
+	
+}

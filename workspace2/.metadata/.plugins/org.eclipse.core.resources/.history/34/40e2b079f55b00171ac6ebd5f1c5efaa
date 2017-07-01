@@ -1,0 +1,26 @@
+package controller;
+
+//import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import pojo.User;
+
+
+@Controller
+public class UserController {
+	
+	//页面的转向
+	@RequestMapping	("/toAddUser.action")
+	public String toAddUser(){
+		return "addUser";
+	}
+	
+	@RequestMapping	("/addUser.action")
+	public String addUser(User user,Model model){
+		model.addAttribute("user", user);
+		return "addUser";
+	}
+}

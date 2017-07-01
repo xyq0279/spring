@@ -5,4 +5,7 @@
   <uri name="http://www.springframework.org/schema/util/spring-util-3.2.xsd" uri="file:///D:/dayCode/jar/spring_jar/spring-framework-3.2.3.RELEASE-dist/spring-framework-3.2.3.RELEASE/schema/util/spring-util-3.2.xsd"/>
   <uri name="http://www.springframework.org/schema/aop/spring-aop-3.2.xsd" uri="file:///D:/dayCode/jar/spring_jar/spring-framework-3.2.3.RELEASE-dist/spring-framework-3.2.3.RELEASE/schema/aop/spring-aop-3.2.xsd"/>
   <uri name="http://www.springframework.org/schema/tx/spring-tx-3.2.xsd" uri="file:///D:/dayCode/jar/spring_jar/spring-framework-3.2.3.RELEASE-dist/spring-framework-3.2.3.RELEASE/schema/tx/spring-tx-3.2.xsd"/>
+  <uri name="http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd" uri="file:///D:/dayCode/jar/spring_jar/spring-framework-3.2.3.RELEASE-dist/spring-framework-3.2.3.RELEASE/schema/mvc/spring-mvc-3.2.xsd"/>
+  <uri name="http://mybatis.org/dtd/mybatis-3-config.dtd" uri="file:///D:/dayCode/jar/Mybatis_jar/mybatis_dtd/mybatis-3-config.dtd"/>
+  <uri name="http://mybatis.org/dtd/mybatis-3-mapper.dtd" uri="file:///D:/dayCode/jar/Mybatis_jar/mybatis_dtd/mybatis-3-mapper.dtd"/>
 </catalog>

@@ -1,0 +1,20 @@
+package controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+
+@Controller
+public class UserController {
+	
+	//页面的转向
+	@RequestMapping	("/toAddUser.action")
+	public String toAddUser(){
+		return "addUser";
+	}
+	
+	@RequestMapping	("/addUser.action")
+	public String addUser(){
+		
+	}
+}

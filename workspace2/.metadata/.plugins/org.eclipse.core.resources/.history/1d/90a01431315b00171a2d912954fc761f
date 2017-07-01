@@ -1,0 +1,10 @@
+package service;
+
+import damain.User;
+
+public interface UserService {
+	
+	public void addUser();
+	
+	public User findUser();
+}

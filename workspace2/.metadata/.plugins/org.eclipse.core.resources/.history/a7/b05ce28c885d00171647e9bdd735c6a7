@@ -1,0 +1,7 @@
+package cn.tedu.mapper;
+
+import cn.tedu.pojo.User;
+
+public interface UserMapper {
+	public User findUser();
+}

@@ -1,0 +1,11 @@
+package cn.tedu.mapper;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import cn.tedu.pojo.User;
+
+public interface UserMapper {
+	
+	@RequestMapping
+	public User findUser();
+}

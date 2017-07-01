@@ -1,0 +1,22 @@
+package dao;
+
+import org.springframework.stereotype.Repository;
+
+import pojo.User;
+
+@Repository
+public class UserDaoImpl implements UserDao{
+
+	@Override
+	public void addUser() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public User findUser() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

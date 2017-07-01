@@ -1,0 +1,4 @@
+1498873950293	Extract local variable 'List'
+1498875409321	Extract local variable 'userList'
+1498879074157	Extract local variable 'mapper'
+1498890434097	Rename type 'dept'

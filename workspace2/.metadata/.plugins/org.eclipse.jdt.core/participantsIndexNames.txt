@@ -1,14 +1,22 @@
 INDEX VERSION 1.126
+D:\workspace\workspace2\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3291082712.index
+\SpringMCV_day07\src
 D:\workspace\workspace2\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1918939973.index
 \easymall_back\src
+D:\workspace\workspace2\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3832931475.index
+\day08_SSM\src
 D:\workspace\workspace2\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3440707994.index
 \easymall1.4\src
+D:\workspace\workspace2\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3184689712.index
+\SpringMCV_day07\src
 D:\workspace\workspace2\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\146040869.index
 \day14\src
 D:\workspace\workspace2\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1253294809.index
 \easymall1.5\src
 D:\workspace\workspace2\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3552409954.index
 \Copy of easymall\src
+D:\workspace\workspace2\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\231530634.index
+\SpringMCV_day07\src
 D:\workspace\workspace2\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\660087278.index
 \day14\src
 D:\workspace\workspace2\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2613836624.index
@@ -19,16 +27,22 @@ D:\workspace\workspace2\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\41
 \day14\src
 D:\workspace\workspace2\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\695308974.index
 \easymall1.0\src
+D:\workspace\workspace2\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2322213833.index
+\SpringMCV_day06\src
 D:\workspace\workspace2\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1676072929.index
 \easymall1.5\src
 D:\workspace\workspace2\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\284995179.index
 \easymall1.3\src
-D:\workspace\workspace2\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3518405072.index
-\version1.2 of easymall\src
+D:\workspace\workspace2\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2863240819.index
+\SpringMCV_day06\src
 D:\workspace\workspace2\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\126335528.index
 \easymall1.2\src
 D:\workspace\workspace2\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2863143731.index
 \version1.1 of easymall\src
+D:\workspace\workspace2\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3518405072.index
+\version1.2 of easymall\src
+D:\workspace\workspace2\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\4034065878.index
+\day08_SSM\src
 D:\workspace\workspace2\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2609138300.index
 \easymall\src
 D:\workspace\workspace2\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3465501758.index

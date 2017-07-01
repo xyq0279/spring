@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <launchConfiguration type="org.eclipse.jdt.junit.launchconfig">
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
-<listEntry value="/spring_day04/src/test/SpringTest.java"/>
+<listEntry value="/day04_spring/src/test/SpringTest.java"/>
 </listAttribute>
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
 <listEntry value="1"/>
@@ -11,6 +11,6 @@
 <stringAttribute key="org.eclipse.jdt.junit.TESTNAME" value="test2"/>
 <stringAttribute key="org.eclipse.jdt.junit.TEST_KIND" value="org.eclipse.jdt.junit.loader.junit4"/>
 <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="test.SpringTest"/>
-<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="spring_day04"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="day04_spring"/>
 <stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value=""/>
 </launchConfiguration>

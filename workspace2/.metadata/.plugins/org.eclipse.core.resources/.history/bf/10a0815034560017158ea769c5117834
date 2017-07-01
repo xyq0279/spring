@@ -1,7 +1,0 @@
-package pojo;
-
-public class Dog {
-	public void habby(){
-		System.out.println("狗吃肉");
-	}
-}

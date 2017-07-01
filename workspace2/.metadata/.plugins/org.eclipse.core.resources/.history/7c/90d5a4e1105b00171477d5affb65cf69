@@ -1,0 +1,26 @@
+package controller;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.Controller;
+
+
+
+public class HelloController implements Controller{
+
+	public ModelAndView handleRequest(HttpServletRequest request,
+			HttpServletResponse response) throws Exception {
+		// TODO Auto-generated method stub
+		ModelAndView modelAndView = new ModelAndView();
+		//添加数据
+		modelAndView.addObject("hello","Hello SpringMVC");
+		//添加页面名称
+		modelAndView.setViewName("hello");//展现hello页面
+		
+		
+		return modelAndView;
+	}
+
+}

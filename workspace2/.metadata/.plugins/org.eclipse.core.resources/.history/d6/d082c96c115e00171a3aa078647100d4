@@ -1,0 +1,31 @@
+package pojo;
+
+public class UserInfo {
+	private Integer user_id;
+	private String tel;
+	private String qq;
+	public Integer getUser_id() {
+		return user_id;
+	}
+	public void setUser_id(Integer user_id) {
+		this.user_id = user_id;
+	}
+	public String getTel() {
+		return tel;
+	}
+	public void setTel(String tel) {
+		this.tel = tel;
+	}
+	public String getQq() {
+		return qq;
+	}
+	public void setQq(String qq) {
+		this.qq = qq;
+	}
+	@Override
+	public String toString() {
+		return "UserInfo [user_id=" + user_id + ", tel=" + tel + ", qq=" + qq
+				+ "]";
+	}
+	
+}

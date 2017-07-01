@@ -1,0 +1,21 @@
+package web;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+
+import pojo.User;
+import service.UserService;
+
+@Controller
+public class Servlet {
+	
+	@Autowired
+	private UserService userService;
+	
+	public void addUser(){
+		userService.addUser();
+	}
+	public User findUser(){
+		return userService.findUser();
+	}
+}

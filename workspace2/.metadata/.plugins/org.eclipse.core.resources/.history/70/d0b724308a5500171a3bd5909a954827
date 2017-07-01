@@ -1,7 +1,0 @@
-package pojo;
-
-public class User {
-	public void say(){
-		System.out.println("大家你们喝农药吗？");
-	}
-}
