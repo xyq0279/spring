@@ -16,10 +16,12 @@
   			<td>性别</td>
   		</tr align="center">
   		<c:forEach items="${userList}" var="user">
+  		<tr>
   			<td>${user.id}</td>
   			<td>${user.name}</td>
   			<td>${user.age}</td>
   			<td>${user.sex}</td>
+  		</tr>
   		</c:forEach>
   	</table>
   </body>

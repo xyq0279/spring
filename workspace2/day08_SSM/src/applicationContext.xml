@@ -18,20 +18,20 @@
 	 
 	 
 	 <!-- 开启包扫描 -->
-	 <context:component-scan base-package="cn.tedu.service"></context:component-scan>
+	 <context:component-scan base-package="cn.tedu.service"/>
 	<!-- 引入配置文件 -->
 	 <context:property-placeholder location="classpath:/jdbc.properties"/>
 	 
 	<!-- 引入数据源 -->
 	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" >
-		<property name="driverClass" value="jdbcDriver"></property>
-		<property name="jdbcUrl" value="jdbcUrl"></property>
-		<property name="user" value="jdbcUser"></property>
-		<property name="password" value="jdbcPassword"></property>
+		<property name="driverClass" value="${jdbcDriver}"></property>
+		<property name="jdbcUrl" value="${jdbcUrl}"></property>
+		<property name="user" value="${jdbcUser}"></property>
+		<property name="password" value="${jdbcPassword}"></property>
 	</bean>
 	 <!-- 配置事务管理器 -->
 	 <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-	 	<property name="dataSource" value="dataSource"></property>
+	 	<property name="dataSource" ref="dataSource"></property>
 	 </bean>
 	 <!-- 配置事务通知 -->
 	 <tx:advice id="txAdvice" transaction-manager="transactionManager">
@@ -46,14 +46,14 @@
 	 <!-- 配置事务切面 -->
 	 <aop:config>
 		 <!-- 切入点 -->
-	 	<aop:pointcut expression="execution(* cm.tedu.service..*.*(..))" id="pc"/>
+	 	<aop:pointcut expression="execution(* cn.tedu.service..*.*(..))" id="pc"/>
 	 	<aop:advisor advice-ref="txAdvice" pointcut-ref="pc"/>
 	 </aop:config>
 	 
 	 
 	 <!-- 整合Mybatis -->
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
-		<property name="dataSource" ref="dataSources"></property>
+		<property name="dataSource" ref="dataSource"></property>
 		<property name="configLocation" value="classpath:/sqlMapConfig.xml"></property>
 		<property name="mapperLocations" value="classpath:/cn/tedu/pojo/*.xml"></property>
 	</bean>

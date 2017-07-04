@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import cn.tedu.mapper.UserMapper;
 import cn.tedu.pojo.User;
 
-@Service
+@Service("userService")
 public class UserServiceImpl implements UserService{
 	
 	@Autowired
