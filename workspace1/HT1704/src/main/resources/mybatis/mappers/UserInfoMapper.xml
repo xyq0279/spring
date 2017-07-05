@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.tarena.ht.mapper.UserInfoMapper">
+
+	<resultMap type="UserInfo" id="userInfoRM">
+		<id column="user_info_id" property="userInfoId" />
+		<result column="name" property="name" />
+		<result column="card_no" property="cardNo" />
+		<result column="join_date" property="joinDate" />
+		<result column="birthday" property="birthday" />
+		<result column="salary" property="salary" />
+		<result column="gender" property="gender" />
+		<result column="telephone" property="telephone" />
+		<result column="station" property="station" />
+		<result column="user_level" property="userLevel" />
+		<result column="remark" property="remark" />
+		<result column="order_no" property="orderNo" />
+		<association property="manager" javaType="UserInfo">
+			<id column="manager_id" property="userInfoId" />
+			<result column="m_name" property="name" />
+		</association>
+	</resultMap>
+	<select id="findManager" resultType="UserInfo">
+		select * from user_info_p
+	</select>
+	
+</mapper>

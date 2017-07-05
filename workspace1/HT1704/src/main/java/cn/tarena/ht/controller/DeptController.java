@@ -20,13 +20,8 @@ public class DeptController {
 	//展示全部部门
 	@RequestMapping("/list")
 	public String findAll(Model model){
-		
 		List<Dept> deptList = deptService.findAll();
-		
-		System.out.println(deptList);
-		
-		model.addAttribute("deptList", deptList);
-		
+		model.addAttribute("deptList", deptList);	
 		return "/sysadmin/dept/jDeptList";
 	}
 	
@@ -38,6 +33,7 @@ public class DeptController {
 		deptService.updateState(deptIds,state);
 		return "redirect:/sysadmin/dept/list";
 	}
+	
 	//修改状态 状态启用
 	@RequestMapping("/start")
 	public String toStart(@RequestParam(value="deptId",defaultValue="0")String[] deptIds,Model model){
@@ -47,12 +43,14 @@ public class DeptController {
 		return "redirect:/sysadmin/dept/list";
 	}
 	
+	//部门删除
 	@RequestMapping("/delete")
 	public String delete(@RequestParam(value="deptId",defaultValue="0")String[] deptIds){
 		
 		deptService.deleteDept(deptIds);
 		return "redirect:/sysadmin/dept/list";
 	}
+	
 	//部门新增
 	@RequestMapping("/toCreate")
 	public String toCreate(Model model){
@@ -63,11 +61,11 @@ public class DeptController {
 	}
 	@RequestMapping("/save")
 	public String save(Dept dept){
-		
 		deptService.saveDept(dept);
-		
 		return "redirect:/sysadmin/dept/list";
 	}
+	
+	//查看单个部门
 	@RequestMapping("/toView")
 	public String toView(String deptId,Model model){
 		//根据部门id查询数据
@@ -75,6 +73,8 @@ public class DeptController {
 		model.addAttribute("dept", dept);
 		return "/sysadmin/dept/jDeptView";
 	}
+	
+	//修改部门信息
 	@RequestMapping("/toUpdate")
 	public String toUpdate(String deptId,Model model){
 		//根据部门id查询数据

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.tarena.ht.mapper.UserMapper">
+
+	<select id="findAll" resultMap="userRm">
+		select * from 
+		(select * from user_p u
+		       left join
+		(select u.user_info_id,u.name,u.card_no,u.manager_id,m.m_name,u.join_date,u.salary,
+		u.birthday,u.gender,u.station,u.telephone,u.user_level,u.remark,u.order_no from 
+		user_info_p u
+		            left join
+		(select user_info_id m_id,name m_name from user_info_p)m 
+		        on u.manager_id=m.m_id)info
+		        on u.user_id=info.user_info_id) u 
+		    left join       
+		(select dept_id d_id,dept_name from dept_p)d
+		        on u.dept_id=d.d_id
+	</select>
+	<resultMap type="User" id="userRm" autoMapping="true">
+		<id column="user_id" property="userId"/>
+		<association property="dept" javaType="Dept">
+			<id column="d_id" property="deptId"/>
+			<result column="dept_name" property="deptName"/>
+		</association>
+		<association property="userInfo" javaType="UserInfo">
+			<id column="user_info_id" property="userInfoId"/>
+			<result column="name" property="name"/>
+			<result column="card_no" property="cardNo"/>
+			<result column="join_date" property="joinDate"/>
+			<result column="birthday" property="birthday"/>
+			<result column="salary" property="salary"/>
+			<result column="gender" property="gender"/>
+			<result column="telephone" property="telephone"/>
+			<result column="station" property="station"/>
+			<result column="user_level" property="userLevel"/>
+			<result column="remark" property="remark"/>
+			<result column="order_no" property="orderNo"/>
+			<association property="manager" javaType="UserInfo">
+				<id column="manager_id" property="userInfoId"/>
+				<result column="m_name" property="name"/>
+			</association>
+		</association>	
+	</resultMap>
+	
+	<update id="updateState">
+		update user_p set 
+		state = #{state}
+		where user_id in 
+		<foreach collection="userIds" open="(" close=")" separator="," item="id">
+			#{id}
+		</foreach>
+	</update>
+	
+	<insert id="addUser">
+		insert into user_p 
+		values(
+			#{userId},#{dept.deptId},#{username},
+			#{},
+		)
+	</insert>
+	
+</mapper>
