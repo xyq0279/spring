@@ -13,4 +13,10 @@ public interface UserMapper {
 	
 	public void addUser(User user);
 
+	public void deleteUser(String[] userIds);
+
+	public User findOne(String userId);
+
+	public void updateUser(User user);
+
 }

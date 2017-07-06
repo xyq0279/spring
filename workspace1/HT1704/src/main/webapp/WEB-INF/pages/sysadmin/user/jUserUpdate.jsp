@@ -1,0 +1,141 @@
+<%@ page language="java" pageEncoding="UTF-8"%>
+<%@ include file="../../baselist.jsp"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>用户更新</title>
+</head>
+
+<body>
+<form name="icform" method="post">
+
+<div id="menubar">
+<div id="middleMenubar">
+<div id="innerMenubar">
+  <div id="navMenubar">
+<ul>
+	<li id="update"><a href="#" onclick="formSubmit('update','_self');this.blur();">更新</a></li>
+	<li id="back"><a href="#" onclick="window.history.go(-1);">后退</a></li>
+</ul>
+  </div>
+</div>
+</div>
+</div>
+   
+  <div class="textbox-title">
+	<img src="../../staticfile/skin/default/images/icon/currency_yen.png"/>
+   用户更新
+  </div> 
+  
+<div>
+
+
+<div class="eXtremeTable" >
+<table id="ec_table" class="tableRegion" width="98%" >
+	<tr hidden="hidden">
+		<td><input name="userId" value="${usermsg.userId}"></td>
+	</tr>
+	<tr class="odd">
+		<td>用户名</td>
+		<td><input type="text" name="username" value="${usermsg.username}"></td>
+		<td>密码</td>
+		<td><input type="text" name="password" value="${usermsg.password}"></td>
+	</tr>
+	<tr class="odd">
+		<td>真实姓名</td>
+		<td><input type="text" name="userInfo.name" value="${usermsg.userInfo.name}"></td>
+		<td>身份证号</td>
+		<td><input type="text" name="userInfo.cardNo" value="${usermsg.userInfo.cardNo}"></td>
+	</tr>
+	<tr class="odd">
+		<td>生日</td>
+		<td><input type="text" style="width:90px;" name="userInfo.birthday"
+	   		onclick="WdatePicker({el:this,isShowOthers:true,dateFmt:'yyyy-MM-dd'});" 
+	   		value="<fmt:formatDate value="${usermsg.userInfo.birthday}" pattern="yyyy-MM-dd"/>" /></td>
+		<td>性别</td>
+		<td><input type="radio" name="userInfo.gender" value="男" 
+			<c:if test="${usermsg.userInfo.gender=='男'}">checked="checked"</c:if>
+			>男
+			<input type="radio" name="userInfo.gender" value="女" 
+				<c:if test="${usermsg.userInfo.gender=='女'}">checked="checked"</c:if>
+			>女
+		</td>
+	</tr>
+	<tr class="odd">
+		<td>入职日期</td>
+		<td><input type="text" style="width:90px;" name="userInfo.joinDate"
+	   		onclick="WdatePicker({el:this,isShowOthers:true,dateFmt:'yyyy-MM-dd'});"
+	   		value="<fmt:formatDate value="${usermsg.userInfo.joinDate}" pattern="yyyy-MM-dd"/>" /></td>
+		<td>电话</td>
+		<td><input type="text" name="userInfo.telephone" value="${usermsg.userInfo.telephone}" ></td>
+	</tr>
+	<tr class="odd">
+		<td>所属部门</td>
+		<td>
+			<select style="width: 120px" name="dept.deptId">
+				<option value="">---请选择部门---</option>
+				<c:forEach items="${parentList}" var="p">
+					<option value="${p.deptId }"  
+						<c:if test="${usermsg.dept.deptId==p.deptId}">selected="selected"</c:if>
+					>${p.deptName}</option>
+				</c:forEach>
+			</select>
+		</td>
+		<td>直属领导</td>
+		<td>
+			<select style="width: 120px" name="userInfo.manager.userInfoId">
+				<option value="">---无上级---</option>
+				<c:forEach items="${userList}" var="u">
+					<option value="${u.userInfoId }" 
+						<c:if test="${usermsg.userInfo.manager.userInfoId==u.userInfoId}">selected="selected"</c:if>
+					>${u.name}</option>
+				</c:forEach>
+			</select>
+		</td>
+	</tr>
+	<tr class="odd">
+		<td>薪酬</td>
+		<td><input type="text" name="userInfo.salary" value="${usermsg.userInfo.salary}"></td>
+		<td>职务</td>
+		<td><input type="text" name="userInfo.station"  value="${usermsg.userInfo.station}"></td>
+	</tr>
+	
+	<tr class="odd">
+		<td>用户级别</td>
+		<td>
+			<select style="width: 120px" name="userInfo.userLevel">
+				<option value="1" 
+				<c:if test="${usermsg.userInfo.userLevel==1}">selected="selected"</c:if>
+				>总经理</option>
+				<option value="4" 
+				<c:if test="${usermsg.userInfo.userLevel==4}">selected="selected"</c:if>
+				>普通用户</option>
+				<option value="3"
+				<c:if test="${usermsg.userInfo.userLevel==3}">selected="selected"</c:if>
+				>部门经理</option>
+				<option value="2" 
+				<c:if test="${usermsg.userInfo.userLevel==2}">selected="selected"</c:if>
+				>副总</option>
+			</select>
+		</td>
+		<td>状态</td>
+		<td ><input type="radio" name="state" value="0" 
+			<c:if test="${usermsg.state==0}">checked="checked"</c:if>
+		>停用
+		<input type="radio" name="state" value="1"
+			<c:if test="${usermsg.state==1}">checked="checked"</c:if>
+		>启用</td>
+	</tr>
+	<tr>
+		<td>备注</td>
+		<td colspan="3">
+			<textarea style="height: 60px;width: 100%" name="userInfo.remark">${usermsg.userInfo.remark}</textarea>
+		</td>
+	</tr>
+</table>
+</div>
+</div>
+</form>
+</body>
+</html>
+

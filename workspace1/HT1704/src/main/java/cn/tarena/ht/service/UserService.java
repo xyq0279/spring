@@ -12,5 +12,13 @@ public interface UserService {
 
 	public void addUser(User user);
 
-	public List<UserInfo> findManager();
+	public List<UserInfo> findUserInfo();
+
+	public void delete(String[] userIds);
+
+	public User findOne(String userId);
+
+	public void update(User user);
+
+	public List<UserInfo> findManager(String userId);
 }

@@ -49,13 +49,13 @@
 		<td><input type="text" style="width:90px;" name="userInfo.birthday"
 	   		onclick="WdatePicker({el:this,isShowOthers:true,dateFmt:'yyyy-MM-dd'});"/></td>
 		<td>性别</td>
-		<td><input type="radio" name="userInfo.gender">男
-			<input type="radio" name="userInfo.gender">女
+		<td><input type="radio" name="userInfo.gender" value="男">男
+			<input type="radio" name="userInfo.gender" value="女">女
 		</td>
 	</tr>
 	<tr class="odd">
 		<td>入职日期</td>
-		<td><input type="text" style="width:90px;" name="userInfo.joinDay"
+		<td><input type="text" style="width:90px;" name="userInfo.joinDate"
 	   		onclick="WdatePicker({el:this,isShowOthers:true,dateFmt:'yyyy-MM-dd'});"/></td>
 		<td>电话</td>
 		<td><input type="text" name="userInfo.telephone"></td>
@@ -89,7 +89,7 @@
 	
 	<tr class="odd">
 		<td>用户级别</td>
-		<td><input type="" name="userInfo.userLevel">
+		<td>
 			<select style="width: 120px" name="userInfo.userLevel">
 				<option value="1" selected="selected">总经理</option>
 				<option value="4">普通用户</option>
@@ -98,8 +98,14 @@
 			</select>
 		</td>
 		<td>状态</td>
-		<td><input type="radio" name="state" value="0">停用
+		<td ><input type="radio" name="state" value="0" >停用
 		<input type="radio" name="state" value="1">启用</td>
+	</tr>
+	<tr>
+		<td>备注</td>
+		<td colspan="3">
+			<textarea style="height: 60px;width: 100%" name="userInfo.remark"></textarea>
+		</td>
 	</tr>
 </table>
 </div>

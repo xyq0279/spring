@@ -62,7 +62,7 @@
 		<td>${u.userInfo.name}</td>
 		<td>${u.userInfo.cardNo}</td>
 		<td>${u.userInfo.manager.name}</td>
-		<td>${u.userInfo.joinDate}</td>
+		<td><fmt:formatDate value="${u.userInfo.joinDate}" pattern="yyyy-MM-dd"/></td>
 		<td>${u.userInfo.salary}</td>
 		<td>${u.userInfo.gender}</td>
 		<td>

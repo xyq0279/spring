@@ -4,26 +4,61 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.tarena.ht.mapper.UserInfoMapper">
 
-	<resultMap type="UserInfo" id="userInfoRM">
-		<id column="user_info_id" property="userInfoId" />
-		<result column="name" property="name" />
-		<result column="card_no" property="cardNo" />
-		<result column="join_date" property="joinDate" />
-		<result column="birthday" property="birthday" />
-		<result column="salary" property="salary" />
-		<result column="gender" property="gender" />
-		<result column="telephone" property="telephone" />
-		<result column="station" property="station" />
-		<result column="user_level" property="userLevel" />
-		<result column="remark" property="remark" />
-		<result column="order_no" property="orderNo" />
-		<association property="manager" javaType="UserInfo">
-			<id column="manager_id" property="userInfoId" />
-			<result column="m_name" property="name" />
-		</association>
-	</resultMap>
-	<select id="findManager" resultType="UserInfo">
+	<select id="findUserInfo" resultType="UserInfo">
 		select * from user_info_p
 	</select>
-	
+	<insert id="addUserInfo">
+		insert into user_info_p 
+		values(
+			#{userInfoId,jdbcType=VARCHAR},
+			#{name,jdbcType=VARCHAR},
+			#{cardNo,jdbcType=VARCHAR},
+			#{manager.userInfoId,jdbcType=VARCHAR},
+			#{joinDate,jdbcType=DATE},
+			#{salary,jdbcType=DOUBLE},
+			#{birthday,jdbcType=DATE},
+			#{gender,jdbcType=VARCHAR},
+			#{station,jdbcType=VARCHAR},
+			#{telephone,jdbcType=VARCHAR},
+			#{userLevel,jdbcType=VARCHAR},
+			#{remark,jdbcType=VARCHAR},
+			#{orderNo,jdbcType=INTEGER},
+			#{createBy,jdbcType=VARCHAR},
+			#{createDept,jdbcType=VARCHAR},
+			#{createTime,jdbcType=DATE},
+			#{updateBy,jdbcType=VARCHAR},
+			#{updateTime,jdbcType=DATE}
+		)
+	</insert>
+	<delete id="deleteUserInfo">
+		delete from user_info_p where user_info_id in
+		<foreach collection="array" open="(" close=")" separator="," item="id">
+			#{id}
+		</foreach>
+	</delete>
+	<select id="findManager" resultType="UserInfo">
+		select * from user_info_p where user_info_id
+		not in (#{userInfoId})
+	</select>
+	<update id="updateUserInfo">
+		update user_info_p set
+			name=#{name,jdbcType=VARCHAR},
+			card_no=#{cardNo,jdbcType=VARCHAR},
+			manager_id=#{manager.userInfoId,jdbcType=VARCHAR},
+			join_date=#{joinDate,jdbcType=DATE},
+			salary=#{salary,jdbcType=DOUBLE},
+			birthday=#{birthday,jdbcType=DATE},
+			gender=#{gender,jdbcType=VARCHAR},
+			station=#{station,jdbcType=VARCHAR},
+			telephone=#{telephone,jdbcType=VARCHAR},
+			user_level=#{userLevel,jdbcType=VARCHAR},
+			remark=#{remark,jdbcType=VARCHAR},
+			order_no=#{orderNo,jdbcType=INTEGER},
+			create_by=#{createBy,jdbcType=VARCHAR},
+			create_dept=#{createDept,jdbcType=VARCHAR},
+			create_time=#{createTime,jdbcType=DATE},
+			update_by=#{updateBy,jdbcType=VARCHAR},
+			update_time=#{updateTime,jdbcType=DATE}
+		where user_info_id =#{userInfoId}
+	</update>
 </mapper>

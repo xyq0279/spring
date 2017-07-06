@@ -19,7 +19,7 @@ import cn.tarena.ht.service.UserService;
 
 @Controller
 @RequestMapping("/sysadmin/user")
-public class Usercontroller {
+public class Usercontroller extends BaseController{
 	
 	@Autowired
 	private UserService userService;
@@ -36,13 +36,13 @@ public class Usercontroller {
 	}
 	
 	@RequestMapping("/start")
-	public String start(@RequestParam("userId")String[] userIds){
+	public String start(@RequestParam(value="userId",defaultValue="0")String[] userIds){
 		int state = 1;
 		userService.updateState(userIds,state);
 		return "redirect:/sysadmin/user/list";
 	}
 	@RequestMapping("/stop")
-	public String stop(@RequestParam("userId")String[] userIds){
+	public String stop(@RequestParam(value="userId",defaultValue="0")String[] userIds){
 		int state = 0;
 		userService.updateState(userIds,state);
 		return "redirect:/sysadmin/user/list";
@@ -51,15 +51,42 @@ public class Usercontroller {
 	@RequestMapping("/toCreate")
 	public String toCreate(Model model){
 		
-		List<UserInfo> userList = userService.findManager();
+		List<UserInfo> userList = userService.findUserInfo();
 		List<Dept> parentList = deptService.findParent();
 		model.addAttribute("userList", userList);
 		model.addAttribute("parentList", parentList);
 		return "/sysadmin/user/jUserCreate";
 	}
-	
+	@RequestMapping("/save")
 	public String addUser(User user){
-			userService.addUser(user);
+		userService.addUser(user);
 		return "redirect:/sysadmin/user/list";
 	}
+	@RequestMapping("/delete")
+	public String delete(@RequestParam(value="userId",defaultValue="0")String[] userIds){
+		userService.delete(userIds);
+		return "redirect:/sysadmin/user/list";
+	}
+	@RequestMapping("/toView")
+	public String toView(String userId,Model model){
+		User user = userService.findOne(userId);
+		model.addAttribute("user", user);
+		return "/sysadmin/user/jUserView";
+	}
+	@RequestMapping("/toUpdate")
+	public String toUpdate(String userId,Model model){
+		User usermsg = userService.findOne(userId);
+		List<UserInfo> userList = userService.findManager(userId);
+		List<Dept> parentList = deptService.findParent();
+		model.addAttribute("usermsg", usermsg);
+		model.addAttribute("userList", userList);
+		model.addAttribute("parentList", parentList);
+		return "/sysadmin/user/jUserUpdate";
+	}
+	@RequestMapping("/update")
+	public String upate(User user){
+		userService.update(user);
+		return "redirect:/sysadmin/user/list";
+	}
+	
 }
