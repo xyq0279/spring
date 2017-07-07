@@ -54,9 +54,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			user_level=#{userLevel,jdbcType=VARCHAR},
 			remark=#{remark,jdbcType=VARCHAR},
 			order_no=#{orderNo,jdbcType=INTEGER},
-			create_by=#{createBy,jdbcType=VARCHAR},
-			create_dept=#{createDept,jdbcType=VARCHAR},
-			create_time=#{createTime,jdbcType=DATE},
 			update_by=#{updateBy,jdbcType=VARCHAR},
 			update_time=#{updateTime,jdbcType=DATE}
 		where user_info_id =#{userInfoId}

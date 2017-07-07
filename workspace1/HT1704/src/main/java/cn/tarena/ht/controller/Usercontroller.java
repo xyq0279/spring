@@ -2,18 +2,21 @@ package cn.tarena.ht.controller;
 
 import java.util.List;
 
-import javax.jws.WebParam.Mode;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import cn.tarena.ht.pojo.Dept;
+import cn.tarena.ht.pojo.Role;
 import cn.tarena.ht.pojo.User;
 import cn.tarena.ht.pojo.UserInfo;
 import cn.tarena.ht.service.DeptService;
+import cn.tarena.ht.service.RoleService;
 import cn.tarena.ht.service.UserService;
 
 
@@ -25,6 +28,8 @@ public class Usercontroller extends BaseController{
 	private UserService userService;
 	@Autowired
 	private DeptService deptService;
+	@Autowired
+	private RoleService roleService;
 	
 	@RequestMapping("/list")
 	public String findAll(Model model){
@@ -88,5 +93,34 @@ public class Usercontroller extends BaseController{
 		userService.update(user);
 		return "redirect:/sysadmin/user/list";
 	}
-	
+	//转向到角色分配页面
+	@RequestMapping("/role")
+	public String toRole(String userId,Model model) throws JsonProcessingException{
+		//根据userid信息查询角色信息
+		List<String> roleIdList = roleService.findRoleIdByUserId(userId);
+		
+		List<Role> roleList = roleService.findAll();
+		for (Role role : roleList) {
+			if(roleIdList.contains(role.getRoleId())){
+				//当前的id是用户拥有的角色信息
+				role.setChecked(true);
+			}
+		}
+		
+		//将roleList转化为 Jason串
+		ObjectMapper objectMapper = new ObjectMapper();
+		String zTreeJson = objectMapper.writeValueAsString(roleList);
+		System.out.println(zTreeJson);
+		model.addAttribute("zTreeJson", zTreeJson);
+		
+		model.addAttribute("userId", userId);
+		return "/sysadmin/user/jUserRole";
+	}
+	//saveUserRole
+	@RequestMapping("/saveUserRole")
+	public String saveUserRole(String userId,String[] roleIds){
+		//将用户和角色信息入库
+		userService.saveRoleUser(userId,roleIds);
+		return "redirect:/sysadmin/user/list";
+	}
 }

@@ -6,8 +6,8 @@
 <frameset rows="125,*" name="topFrameset" border="0">
 	<frame name="top_frame" scrolling="no"  target="middleFrameSet" src="title.action">	
 	<frameset cols="202,*" height="100%" name="middle" frameborder="no" border="0" framespacing="0">
-		<frame name="leftFrame" class="leftFrame" target="main" scrolling="no" src="homeLeft.action" />
-		<frame name="main" class="rightFrame" src="homeMain.action" />
+		<frame name="leftFrame" class="leftFrame" target="main" scrolling="no" src="home/Left.action" />
+		<frame name="main" class="rightFrame" src="home/Main.action" />
 	</frameset>
 </frameset>
 

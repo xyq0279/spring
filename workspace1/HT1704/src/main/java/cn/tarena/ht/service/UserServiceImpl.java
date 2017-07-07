@@ -74,5 +74,14 @@ public class UserServiceImpl implements UserService{
 	public List<UserInfo> findManager(String userId) {
 		return userInfoMapper.findManager(userId);
 	}
+	@Override
+	public void saveRoleUser(String userId, String[] roleIds) {
+		//防止重复提交先删除
+		userMapper.deleteRoleByUserId(userId);
+		for (String roleId : roleIds) {
+			userMapper.saveRoleUser(userId,roleId);
+		}
+		
+	}
 
 }

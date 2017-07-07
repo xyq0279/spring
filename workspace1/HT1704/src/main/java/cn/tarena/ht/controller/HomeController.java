@@ -19,7 +19,7 @@ public class HomeController {
 		return "/home/title";
 	}
 	
-	//转向home的左侧页面
+/*	//转向home的左侧页面
 	@RequestMapping("/homeLeft")
 	public String homeLeft(){
 		return "/home/left";
@@ -30,8 +30,8 @@ public class HomeController {
 	public String homeMain(){
 		return "/home/main";
 	}
-	
-	@RequestMapping("/sysadminLeft")
+	*/
+	/*@RequestMapping("/sysadminLeft")
 	public String sysadminLeft(){
 		return "/sysadmin/left";
 	}
@@ -39,5 +39,14 @@ public class HomeController {
 	@RequestMapping("/sysadminMain")
 	public String sysadminMain(){
 		return "/sysadmin/main";
+	}*/
+	@RequestMapping("/{module}/Left")
+	public String sysadminLeft(@PathVariable String module){
+		return "/"+module+"/left";
+	}
+	
+	@RequestMapping("/{module}/Main")
+	public String sysadminMain(@PathVariable String module){
+		return "/"+module+"/main";
 	}
 }

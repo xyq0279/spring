@@ -97,9 +97,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			username=#{username,jdbcType=VARCHAR},
 			password=#{password,jdbcType=VARCHAR},
 			state=#{state,jdbcType=INTEGER},
-			create_by=#{createBy,jdbcType=VARCHAR},
-			create_dept=#{createDept,jdbcType=VARCHAR},
-			create_time=#{createTime,jdbcType=DATE},
 			update_by=#{updateBy,jdbcType=VARCHAR},
 			update_time=#{updateTime,jdbcType=DATE}
 		where user_id = #{userId}

@@ -21,4 +21,6 @@ public interface UserService {
 	public void update(User user);
 
 	public List<UserInfo> findManager(String userId);
+
+	public void saveRoleUser(String userId, String[] roleIds);
 }

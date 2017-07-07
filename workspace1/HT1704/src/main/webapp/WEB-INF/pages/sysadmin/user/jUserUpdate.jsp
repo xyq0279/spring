@@ -33,7 +33,7 @@
 <div class="eXtremeTable" >
 <table id="ec_table" class="tableRegion" width="98%" >
 	<tr hidden="hidden">
-		<td><input name="userId" value="${usermsg.userId}"></td>
+		<td><input type="text" name="userId" value="${usermsg.userId}"></td>
 	</tr>
 	<tr class="odd">
 		<td>用户名</td>

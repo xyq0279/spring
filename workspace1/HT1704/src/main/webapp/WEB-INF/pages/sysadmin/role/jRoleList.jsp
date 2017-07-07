@@ -3,7 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<title>用户列表</title>
+	<title>角色列表</title>
 </head>
 
 <body>
@@ -20,7 +20,6 @@
 	<li id="delete"><a href="#" onclick="formSubmit('delete','_self');this.blur();">删除</a></li>
 	<li id="new"><a href="#" onclick="formSubmit('start','_self');this.blur();">启用</a></li>
 	<li id="new"><a href="#" onclick="formSubmit('stop','_self');this.blur();">停用</a></li>
-	<li id="new"><a href="#" onclick="formSubmit('role','_self');this.blur();">角色</a></li>
 </ul>
   </div>
 </div>
@@ -29,7 +28,7 @@
    
   <div class="textbox-title">
 	<img src="../../staticfile/skin/default/images/icon/currency_yen.png"/>
-    用户列表
+   角色列表
   </div> 
   
 <div>
@@ -39,37 +38,22 @@
 <table id="ec_table" class="tableRegion" width="98%" >
 	<thead>
 	<tr>
-		<td class="tableHeader"><input type="checkbox" name="selid" onclick="checkAll('userId',this)"></td>
+		<td class="tableHeader"><input type="checkbox" name="selid" onclick="checkAll('roleId',this)"></td>
 		<td class="tableHeader">序号</td>
-		<td class="tableHeader">用户名</td>
-		<td class="tableHeader">所属部门</td>
-		<td class="tableHeader">真实姓名</td>
-		<td class="tableHeader">身份证号</td>
-		<td class="tableHeader">直属领导</td>
-		<td class="tableHeader">入职日期</td>
-		<td class="tableHeader">薪酬</td>
-		<td class="tableHeader">性别</td>
-		<td class="tableHeader">状态</td>
+		<td class="tableHeader">角色名称</td>
+		<td class="tableHeader">排序号</td>
+		<td class="tableHeader">备注信息</td>
 	</tr>
 	</thead>
 	<tbody class="tableBody" >
 	
-	<c:forEach items="${userList}" var="u" varStatus="status">
+	<c:forEach items="${roleList}" var="r" varStatus="status">
 	<tr class="odd" onmouseover="this.className='highlight'" onmouseout="this.className='odd'">
-		<td><input type="checkbox" name="userId" value="${u.userId}"/></td>
+		<td><input type="checkbox" name="roleId" value="${r.roleId}"/></td>
 		<td>${status.index+1}</td>
-		<td>${u.username}</td>
-		<td>${u.dept.deptName}</td>
-		<td>${u.userInfo.name}</td>
-		<td>${u.userInfo.cardNo}</td>
-		<td>${u.userInfo.manager.name}</td>
-		<td><fmt:formatDate value="${u.userInfo.joinDate}" pattern="yyyy-MM-dd"/></td>
-		<td>${u.userInfo.salary}</td>
-		<td>${u.userInfo.gender}</td>
-		<td>
-			<c:if test="${u.state==1}"><a href="stop?userId=${u.userId}"><font color="green">启用</font></a></c:if>
-			<c:if test="${u.state==0}"><a href="start?userId=${u.userId}"><font color="red">停用</font></a></c:if>
-		</td>
+		<td>${r.name}</td>
+		<td>${r.orderNo}</td>
+		<td>${r.remarks}</td>
 	</tr>
 	</c:forEach>
 	

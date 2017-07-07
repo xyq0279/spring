@@ -28,6 +28,8 @@
 		<jstl.version>1.2</jstl.version>
 		<servlet-api.version>2.5</servlet-api.version>
 		<jsp-api.version>2.0</jsp-api.version>
+		
+		<jackson.version>2.4.2</jackson.version>
 	</properties>
 	
 	<dependencies>
@@ -75,6 +77,12 @@
 			<groupId>com.github.abel533</groupId>
 			<artifactId>mapper</artifactId>
 			<version>${mapper.version}</version>
+		</dependency>
+		<!-- Jackson Json处理工具包 -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>${jackson.version}</version>
 		</dependency>
 		
 		<!-- Oracle版权问题，maven目录必须自己手动建立 -->
