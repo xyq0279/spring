@@ -25,7 +25,7 @@
 			<tx:method name="save*" propagation="REQUIRED" />
 			<tx:method name="update*" propagation="REQUIRED" />
 			<tx:method name="delete*" propagation="REQUIRED" />
-
+			<tx:method name="add*" propagation="REQUIRED" />
 			<!--其他方法使用默认事务策略 -->
 			<tx:method name="*" />
 		</tx:attributes>

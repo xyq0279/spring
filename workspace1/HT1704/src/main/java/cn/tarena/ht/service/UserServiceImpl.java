@@ -49,10 +49,7 @@ public class UserServiceImpl implements UserService{
 	}
 	@Override
 	public void delete(String[] userIds) {
-		
-		userMapper.deleteUser(userIds);
-		userInfoMapper.deleteUserInfo(userIds);
-		
+ 		userMapper.deleteUser(userIds);
 	}
 	@Override
 	public User findOne(String userId) {
