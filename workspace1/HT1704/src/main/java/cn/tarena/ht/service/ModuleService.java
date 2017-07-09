@@ -18,4 +18,6 @@ public interface ModuleService {
 	public Module findOne(String moduleId);
 
 	public void UpdateModule(Module module);
+
+	public List<String> findModuleIdByRoleId(String roleId);
 }

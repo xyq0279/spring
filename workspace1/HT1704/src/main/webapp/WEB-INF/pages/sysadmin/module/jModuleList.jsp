@@ -44,8 +44,8 @@
 		<td class="tableHeader">模块类型</td>
 		<td class="tableHeader">上级模块</td>
 		<td class="tableHeader">排序号</td>
-		<td class="tableHeader">状态</td>
 		<td class="tableHeader">备注信息</td>
+		<td class="tableHeader">状态</td>
 	</tr>
 	</thead>
 	<tbody class="tableBody" >

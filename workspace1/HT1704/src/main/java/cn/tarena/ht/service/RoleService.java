@@ -16,4 +16,6 @@ public interface RoleService {
 	public void updateRole(Role role);
 
 	public List<String> findRoleIdByUserId(String userId);
+
+	public void saveRoleModule(String roleId, String[] moduleIds);
 }

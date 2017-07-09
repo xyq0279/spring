@@ -22,4 +22,8 @@ public interface ModuleMapper {
 	public Module findOne(String moduleId);
 	
 	public void UpdateModule(Module module);
+	
+	public List<String> findModuleIdByRoleId(String roleId);
+	
+	public void deleteRoleMouleByModuleId(String[] moduleIds);
 }

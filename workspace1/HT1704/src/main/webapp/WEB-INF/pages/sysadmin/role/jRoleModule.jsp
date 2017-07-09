@@ -4,7 +4,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<title>用户角色分配</title>
+	<title>角色模块分配</title>
 	<link rel="stylesheet" href="${ctx}/staticfile/components/zTree/css/zTreeStyle/zTreeStyle.css" type="text/css">
 	<script type="text/javascript" src="${ctx}/staticfile/components/zTree/js/jquery-1.4.4.min.js"></script>
 	<script type="text/javascript" src="${ctx}/staticfile/components/zTree/js/jquery.ztree.core-3.5.min.js"></script>
@@ -48,7 +48,7 @@
 				str += nodes[i].id;
 			}
 			
-			$('#roleIds').val(str);		//将拼接完成的字符串放入隐藏域，这样就可以通过post提交
+			$('#moduleIds').val(str);		//将拼接完成的字符串放入隐藏域，这样就可以通过post提交
 		}
 	</SCRIPT>
 </head>
@@ -60,7 +60,7 @@
 			<div id="innerMenubar">
 		 	<div id="navMenubar">
 			<ul>
-				<li id="save"><a href="#" onclick="submitCheckedNodes();formSubmit('saveUserRole','_self');this.blur();">保存</a></li>
+				<li id="save"><a href="#" onclick="submitCheckedNodes();formSubmit('saveRoleModule','_self');this.blur();">保存</a></li>
 				<li id="back"><a href="#" onclick="window.history.go(-1);this.blur();">返回</a></li>
 			</ul>
 		    </div>
@@ -70,14 +70,14 @@
 		   
 		  <div class="textbox-title">
 			<img src="${ctx}/staticfile/skin/default/images/icon/currency_yen.png"/>
-		    用户角色分配
+		    角色模块分配
 		  </div> 
 		<div>
 			<div class="eXtremeTable" >
 				<table id="ec_table" class="tableRegion" width="98%" >
 					<!--隐藏域用来传递数据  -->
-					<input type="hidden" id="userId" name="userId" value="${userId}"/>
-					<input type="hidden" id="roleIds" name="roleIds"/>
+					<input type="hidden" id="roleId" name="roleId" value="${roleId}"/>
+					<input type="hidden" id="moduleIds" name="moduleIds"/>
 					<ul id="htZtree" class="ztree"></ul>
 				</table>
 			</div>

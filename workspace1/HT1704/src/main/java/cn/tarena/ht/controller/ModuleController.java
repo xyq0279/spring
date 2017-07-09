@@ -68,4 +68,10 @@ public class ModuleController extends BaseController{
 		moduleService.UpdateModule(module);
 		return "redirect:/sysadmin/module/list";
 	}
+	@RequestMapping("/toView")
+	public String toView(String moduleId,Model model){
+		Module module = moduleService.findOne(moduleId);
+		model.addAttribute("module", module);
+		return "/sysadmin/module/jModuleView";
+	}
 }

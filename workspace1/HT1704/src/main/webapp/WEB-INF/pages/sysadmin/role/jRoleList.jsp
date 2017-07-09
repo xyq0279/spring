@@ -20,6 +20,7 @@
 	<li id="delete"><a href="#" onclick="formSubmit('delete','_self');this.blur();">删除</a></li>
 	<li id="new"><a href="#" onclick="formSubmit('start','_self');this.blur();">启用</a></li>
 	<li id="new"><a href="#" onclick="formSubmit('stop','_self');this.blur();">停用</a></li>
+	<li id="new"><a href="#" onclick="formSubmit('module','_self');this.blur();">模块</a></li>
 </ul>
   </div>
 </div>

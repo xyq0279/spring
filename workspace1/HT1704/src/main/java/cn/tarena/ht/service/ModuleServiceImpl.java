@@ -23,6 +23,7 @@ public class ModuleServiceImpl implements ModuleService{
 	}
 	@Override
 	public void deleteModule(String[] moduleIds) {
+		moduleMapper.deleteRoleMouleByModuleId(moduleIds);
 		moduleMapper.deleteModule(moduleIds);
 	}
 	@Override
@@ -43,6 +44,11 @@ public class ModuleServiceImpl implements ModuleService{
 	public void UpdateModule(Module module) {
 		module.setUpdateTime(new Date());
 		moduleMapper.UpdateModule(module);
+	}
+	@Override
+	public List<String> findModuleIdByRoleId(String roleId) {
+		// TODO Auto-generated method stub
+		return moduleMapper.findModuleIdByRoleId(roleId);
 	}
 
 }

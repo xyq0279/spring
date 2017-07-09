@@ -8,14 +8,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	select * from role_p order by order_no
 </select> -->
 
-<!-- 复用SQL中的语句 -->
-<sql id="insertColumn">
-	#{createBy,jdbcType=VARCHAR},
-	#{createDept,jdbcType=VARCHAR},
-	#{createTime,jdbcType=DATE},
-	#{updateBy,jdbcType=VARCHAR},
-	#{updateTime,jdbcType=DATE}
-</sql>
+	<!-- 复用SQL中的语句 -->
+	<sql id="insertColumn">
+		#{createBy,jdbcType=VARCHAR},
+		#{createDept,jdbcType=VARCHAR},
+		#{createTime,jdbcType=DATE},
+		#{updateBy,jdbcType=VARCHAR},
+		#{updateTime,jdbcType=DATE}
+	</sql>
 	<sql id="updateColumn">
 		update_by=#{updateBy,jdbcType=VARCHAR},
 		update_time=#{updateTime,jdbcType=DATE}
@@ -24,8 +24,16 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<delete id="deleteRole">
 		delete from role_p where role_id in
 		<foreach collection="array" open="(" close=")" separator=","
-			item="id">
-			#{id}
+			item="roleId">
+			#{roleId}
+		</foreach>
+	</delete>
+	
+	<delete id="deleteRoleByUserId">
+		delete from role_user_p where user_id in
+		<foreach collection="array" open="(" close=")" separator=","
+			item="userId">
+			#{userId}
 		</foreach>
 	</delete>
 	
@@ -38,6 +46,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			<include refid="insertColumn"></include>
 		)
 	</insert>
+	
 	<update id="updateRole">
 		update role_p set 
 		name=#{name},
@@ -47,6 +56,22 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		where role_id = #{roleId}
 	</update>
 	
+	<delete id="deleteRoleByRoleId">
+		delete from role_p where role_id = #{roleId}
+	</delete>
 	
+	<insert id="saveRoleModule">
+		insert into role_module_p(role_id,module_id) values(#{roleId},#{moduleId})
+	</insert>
+	
+	<delete id="deleteRoleUserByRoleId">
+		delete from role_user_p where role_id in 
+		<foreach collection="array" item="roleId" open="(" close=")" separator=",">#{roleId}</foreach>
+	</delete>
+	
+	<delete id="deleteRoleModuleByRoleId">
+		delete from role_module_p where role_id in 
+		<foreach collection="array" item="roleId" open="(" close=")" separator=",">#{roleId}</foreach>
+	</delete>
 	
 </mapper>

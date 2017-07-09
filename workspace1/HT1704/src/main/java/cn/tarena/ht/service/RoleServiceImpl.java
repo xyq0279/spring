@@ -23,8 +23,9 @@ public class RoleServiceImpl implements RoleService{
 
 	@Override
 	public void deleteRole(String[] roleIds) {
+		roleMapper.deleteRoleUserByRoleId(roleIds);
+		roleMapper.deleteRoleModuleByRoleId(roleIds);
 		roleMapper.deleteRole(roleIds);
-		
 	}
 
 	@Override
@@ -49,6 +50,14 @@ public class RoleServiceImpl implements RoleService{
 	@Override
 	public List<String> findRoleIdByUserId(String userId) {
 		return roleMapper.findRoleIdByUserId(userId);
+	}
+
+	@Override
+	public void saveRoleModule(String roleId, String[] moduleIds) {
+		roleMapper.deleteRoleByRoleId(roleId);
+		for (String moduleId : moduleIds) {
+			roleMapper.saveRoleModule(roleId,moduleId);
+		}
 	}
 
 }

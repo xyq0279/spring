@@ -9,8 +9,23 @@ public class Module extends BaseEntity{
 	private Integer state;
 	private Integer orderNo;
 	private String remark;
+	private Boolean checked;
 	
-	
+	public Boolean getChecked() {
+		return checked;
+	}
+	public void setChecked(Boolean checked) {
+		this.checked = checked;
+	}
+	public String getId(){
+		return moduleId;
+	}
+	public String getpId(){
+		if(parentModule!=null){
+			return parentModule.getModuleId();
+		}
+		return null;
+	}
 	public String getModuleId() {
 		return moduleId;
 	}
@@ -56,7 +71,7 @@ public class Module extends BaseEntity{
 	@Override
 	public String toString() {
 		return "Module [moduleId=" + moduleId + ", parentModule=" + parentModule + ", name=" + name + ", ctype=" + ctype
-				+ ", state=" + state + ", orderNo=" + orderNo + ", remark=" + remark + "]";
+				+ ", state=" + state + ", orderNo=" + orderNo + ", remark=" + remark + ", checked=" + checked + "]";
 	}
 	
 	
