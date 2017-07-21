@@ -23,4 +23,8 @@ public interface UserService {
 	public List<UserInfo> findManager(String userId);
 
 	public void saveRoleUser(String userId, String[] roleIds);
+
+	public User findUserByUserName(String username);
+
+	public List<String> findModileNameList(String userId);
 }

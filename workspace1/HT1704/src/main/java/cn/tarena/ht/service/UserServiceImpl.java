@@ -12,6 +12,7 @@ import cn.tarena.ht.mapper.UserInfoMapper;
 import cn.tarena.ht.mapper.UserMapper;
 import cn.tarena.ht.pojo.User;
 import cn.tarena.ht.pojo.UserInfo;
+import cn.tarena.ht.tool.Md5Password;
 
 @Service
 public class UserServiceImpl implements UserService{
@@ -45,6 +46,7 @@ public class UserServiceImpl implements UserService{
 		Date createDate = new Date();
 		user.setUserId(userId);
 		user.setCreateTime(createDate);
+		user.setPassword(Md5Password.getMd5HashPassword(user.getPassword(), user.getUsername()));
 		userMapper.addUser(user);
 		UserInfo info = user.getUserInfo();
 		info.setUserInfoId(userId);
@@ -61,7 +63,6 @@ public class UserServiceImpl implements UserService{
 	
 	@Override
 	public User findOne(String userId) {
-		
 		return userMapper.findOne(userId);
 	}
 	
@@ -89,6 +90,17 @@ public class UserServiceImpl implements UserService{
 			userMapper.saveRoleUser(userId,roleId);
 		}
 		
+	}
+
+	@Override
+	public User findUserByUserName(String username) {
+		// TODO Auto-generated method stub
+		return userMapper.findUserByUserName(username);
+	}
+
+	@Override
+	public List<String> findModileNameList(String userId) {
+		return userMapper.findModileNameList(userId);
 	}
 
 }

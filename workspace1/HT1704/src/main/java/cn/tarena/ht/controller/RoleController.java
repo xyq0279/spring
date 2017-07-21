@@ -67,7 +67,7 @@ public class RoleController extends BaseController{
 	public String module(String roleId,Model model) throws JsonProcessingException{
 		//根据roleId查询模块信息
 		List<String> moduleIdList = moduleService.findModuleIdByRoleId(roleId);
-		List<Module> moduleList = moduleService.findParent();
+		List<Module> moduleList = moduleService.findAll();
 		for (Module module : moduleList) {
 			if(moduleIdList.contains(module.getModuleId())){
 				module.setChecked(true);
@@ -82,9 +82,7 @@ public class RoleController extends BaseController{
 	}
 	@RequestMapping("/saveRoleModule")
 	public String saveRoleModule(String roleId,String[] moduleIds){
-		
 		roleService.saveRoleModule(roleId,moduleIds);
-
 		return "redirect:/sysadmin/role/list";
 	}
 }

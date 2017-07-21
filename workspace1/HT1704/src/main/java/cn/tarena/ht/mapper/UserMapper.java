@@ -25,4 +25,8 @@ public interface UserMapper {
 	@Delete("delete from role_user_p where user_id = #{userId}")
 	public void deleteRoleByUserId(String userId);
 
+	public User findUserByUserName(String username);
+
+	public List<String> findModileNameList(String userId);
+
 }

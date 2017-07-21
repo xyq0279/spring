@@ -101,4 +101,25 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			update_time=#{updateTime,jdbcType=DATE}
 		where user_id = #{userId}
 	</update>
+	
+	<select id="findUserByUserName" resultMap="userRm">
+		select * from 
+		(select * from user_p where username = #{username}) u
+		       left join
+		(select u.user_info_id,u.name,u.card_no,u.manager_id,m.m_name,u.join_date,u.salary,
+		u.birthday,u.gender,u.station,u.telephone,u.user_level,u.remark,u.order_no from 
+		user_info_p u
+		            left join
+		(select user_info_id m_id,name m_name from user_info_p)m 
+		        on u.manager_id=m.m_id)info
+		        on u.user_id=info.user_info_id
+	</select>
+	
+	<select id="findModileNameList" resultType="String">
+		select name from module_p where module_id in
+		(select module_id from role_module_p 
+			where role_id in
+			(select role_id from role_user_p 
+				where user_id = #{userId}))
+	</select>
 </mapper>

@@ -10,6 +10,7 @@ import cn.tarena.ht.pojo.Module;
 public interface ModuleMapper {
 	
 	public List<Module> findAll();
+	
 	@Select("select * from module_p")
 	public List<Module> findParent();
 	
