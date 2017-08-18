@@ -120,7 +120,7 @@ public class ItemCatService extends BaseService<ItemCat>{
 			}
 			itemCatData.setItems(list2);
 			list1.add(itemCatData);
-			if(list1.size()>14){
+			if(list1.size()>=14){
 				break;
 			}
 		}

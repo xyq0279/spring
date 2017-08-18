@@ -20,7 +20,8 @@ public class UserController {
 	
 	@Autowired
 	private UserService userService;
-	private static final String JT_TICKET = "JT_TICKET";
+	
+	public static final String JT_TICKET = "JT_TICKET";
 	
 	@RequestMapping("/login")
 	public String index(){

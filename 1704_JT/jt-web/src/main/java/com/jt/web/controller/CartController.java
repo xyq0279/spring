@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.jt.common.util.CookieUtils;
 import com.jt.web.pojo.Cart;
 import com.jt.web.service.CartService;
+import com.jt.web.threadlocal.UserThreadLocal;
 
 @Controller
 @RequestMapping("/cart")
@@ -21,7 +22,7 @@ public class CartController {
 	//查看购物车
 	@RequestMapping("/show")
 	public String showCart(Model model) throws Exception{
-		Long userId = 1L;
+		Long userId = UserThreadLocal.getUserId();
 		List<Cart> cartList = cartService.findCartList(userId);
 		model.addAttribute("cartList", cartList);
 		
@@ -30,7 +31,7 @@ public class CartController {
 	//增加商品到购物车
 	@RequestMapping("/add/{itemId}")
 	public String addCart(Cart cart) throws Exception{
-		Long userId = 1L;
+		Long userId = UserThreadLocal.getUserId();
 		cart.setUserId(userId);
 		System.out.println(cart);
 		cartService.addCart(cart);
@@ -39,14 +40,14 @@ public class CartController {
 	@RequestMapping("/update/num/{itemId}/{num}")
 	@ResponseBody
 	public String updateCart(@PathVariable Long itemId,@PathVariable Integer num) throws Exception{
-		Long userId = 1L;
+		Long userId = UserThreadLocal.getUserId();
 		cartService.updateCart(userId,itemId,num);
 		return "";
 	}
 	
 	@RequestMapping("/delete/{itemId}")
 	public String deleteCart(@PathVariable Long itemId) throws Exception{
-		Long userId = 1L;
+		Long userId = UserThreadLocal.getUserId();
 		cartService.deleteCart(itemId,userId);
 		return "redirect:/cart/show.html";
 	}
